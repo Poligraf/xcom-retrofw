@@ -43,6 +43,29 @@
 #define DEADZONE 2500
 
 
+
+#define	BUTTON_UP		SDLK_UP			// Up
+#define	BUTTON_DOWN		SDLK_DOWN		// Down
+#define	BUTTON_LEFT		SDLK_LEFT		// Left
+#define	BUTTON_RIGHT	SDLK_RIGHT		// Right
+#define	BUTTON_START	SDLK_RETURN		// Start
+#define	BUTTON_SELECT	SDLK_ESCAPE		// Select
+#define	BUTTON_A		SDLK_LCTRL		// Right button (A)
+#define	BUTTON_B		SDLK_LALT		// Bottom button (B)
+#define	BUTTON_X		SDLK_SPACE		// Top button (GCW Y, A320 X)
+#define	BUTTON_Y		SDLK_LSHIFT		// Left button (GCW X, A320 Y)
+#define	BUTTON_L		SDLK_TAB		// L
+#define	BUTTON_R		SDLK_BACKSPACE	// R
+#define	BUTTON_L2		SDLK_PAGEUP		// L2
+#define	BUTTON_R2		SDLK_PAGEDOWN	// R2
+#define	BUTTON_L3		SDLK_KP_DIVIDE	// L3
+#define	BUTTON_R3		SDLK_KP_PERIOD	// R3
+#define	BUTTON_MENU		SDLK_END		// POWER
+
+
+int av_mouse_cur_x;
+int av_mouse_cur_y;
+
 namespace OpenXcom
 {
 
@@ -81,7 +104,7 @@ Game::Game(const std::string &title) : _screen(0), _cursor(0), _lang(0), _save(0
 		{
 			Log(LOG_INFO) << "Could not open any joysticks.";
 		}
-		else 
+		else
 		{
 			Log(LOG_INFO) << "Joystick " << i << " initialized";
 			Log(LOG_INFO) << "Axes: " << SDL_JoystickNumAxes(_joy) << ", Buttons: " << SDL_JoystickNumButtons(_joy);
@@ -103,7 +126,7 @@ Game::Game(const std::string &title) : _screen(0), _cursor(0), _lang(0), _save(0
 
 	// trap the mouse inside the window
 	SDL_WM_GrabInput(Options::captureMouse);
-	
+
 	// Set the window icon
 	CrossPlatform::setWindowIcon(IDI_ICON1, FileMap::getFilePath("openxcom.png"));
 
@@ -119,7 +142,7 @@ Game::Game(const std::string &title) : _screen(0), _cursor(0), _lang(0), _save(0
 
 	// Create cursor
 	_cursor = new Cursor(9, 13);
-	
+
 	// Create invisible hardware cursor to workaround bug with absolute positioning pointing devices
 	SDL_ShowCursor(SDL_ENABLE);
 	Uint8 cursor = 0;
@@ -314,21 +337,25 @@ void Game::run()
 				break;
 			}
 		}
-		
+
 		//handle joystick stuff
 		{
 			//poll mouse state
-			int mousex, mousey;
-			SDL_GetMouseState(&mousex, &mousey);
-			//get axes
-			int16_t joyx = SDL_JoystickGetAxis(_joy, 0);
-			int16_t joyy = SDL_JoystickGetAxis(_joy, 1);
-			//divide by magic numbers
-			int16_t x = joyx/3700;
-			int16_t y = joyy/3700;
-			SDL_WarpMouse(mousex + x, mousey + y);
-		}
+			uint8_t *keystate = SDL_GetKeyState(NULL);
+			if ((keystate[BUTTON_DOWN] || keystate[BUTTON_UP] ||
+			keystate[BUTTON_LEFT] || keystate[BUTTON_RIGHT])) {
+				SDL_GetMouseState(&av_mouse_cur_x, &av_mouse_cur_y);
+				av_mouse_cur_x += 2 * (keystate[BUTTON_RIGHT] - keystate[BUTTON_LEFT]);
+				av_mouse_cur_y += 2 * (keystate[BUTTON_DOWN]  - keystate[BUTTON_UP]);
 
+				if (av_mouse_cur_x < 0) av_mouse_cur_x = 0;
+				if (av_mouse_cur_x > 320) av_mouse_cur_x = 320;
+				if (av_mouse_cur_y < 0) av_mouse_cur_y = 0;
+				if (av_mouse_cur_y > 200) av_mouse_cur_y = 200;
+
+				SDL_WarpMouse(av_mouse_cur_x, av_mouse_cur_y);
+			}
+		}
 		// Process rendering
 		if (runningState != PAUSED)
 		{
@@ -373,7 +400,7 @@ void Game::run()
 		// Save on CPU
 		switch (runningState)
 		{
-			case RUNNING: 
+			case RUNNING:
 				SDL_Delay(1); //Save CPU from going 100%
 				break;
 			case SLOWED: case PAUSED:
