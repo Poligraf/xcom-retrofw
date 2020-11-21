@@ -145,9 +145,7 @@ void OptionsControlsState::addControls(const std::vector<OptionInfo> &keys)
 	{
 		std::string name = tr(i->description());
 		SDLKey *key = i->asKey();
-		std::string keyName = ucWords(SDL_GetKeyName(*key));
-		if (*key == SDLK_UNKNOWN || *key == SDLK_WORLD_95)
-			keyName = "";
+		std::string keyName = keyToButton(*key);
 		_lstControls->addRow(2, name.c_str(), keyName.c_str());
 	}
 }
@@ -234,7 +232,7 @@ void OptionsControlsState::lstControlsKeyPress(Action *action)
 		if (key != 0)
 		{
 			*_selKey->asKey() = key;
-			std::string name = ucWords(SDL_GetKeyName(*_selKey->asKey()));
+			std::string name = keyToButton(key);
 			_lstControls->setCellText(_selected, 1, name);
 		}
 		_lstControls->setCellColor(_selected, 0, _colorNormal);
@@ -242,6 +240,97 @@ void OptionsControlsState::lstControlsKeyPress(Action *action)
 		_selected = -1;
 		_selKey = 0;
 	}
+}
+
+std::string OptionsControlsState::keyToButton(SDLKey key){
+	std::string keyName;
+	switch (key){
+		case SDLK_UP:
+			keyName = "Up";
+			break;
+		case SDLK_DOWN:
+			keyName = "Down";
+			break;
+		case SDLK_LEFT:
+			keyName = "Left";
+			break;
+		case SDLK_RIGHT:
+			keyName = "Right";
+			break;
+		case SDLK_LCTRL:
+			keyName = "A";
+			break;
+		case SDLK_LALT:
+			keyName = "B";
+			break;
+		case SDLK_LSHIFT:
+			keyName = "Y";
+			break;
+		case SDLK_SPACE:
+			keyName = "X";
+			break;
+		case SDLK_TAB:
+			keyName = "L";
+			break;
+		case SDLK_BACKSPACE:
+			keyName = "R";
+			break;
+
+		case SDLK_RETURN:
+			keyName = "Start";
+			break;
+		case SDLK_ESCAPE:
+			keyName = "Select";
+			break;
+
+		case SDLK_w:
+		keyName = "Select + Up";
+		break;
+
+		case SDLK_s:
+		keyName = "Select + Down";
+		break;
+
+		case SDLK_a:
+		keyName = "Select + Left";
+		break;
+
+		case SDLK_d:
+		keyName = "Select + Right";
+		break;
+
+		case SDLK_1:
+		keyName = "Select + A";
+		break;
+
+		case SDLK_2:
+		keyName = "Select + B";
+		break;
+
+		case SDLK_4:
+		keyName = "Select + X";
+		break;
+
+		case SDLK_3:
+		keyName = "Select + Y";
+		break;
+
+		case SDLK_PAGEUP:
+		keyName = "Select + L";
+		break;
+
+		case SDLK_PAGEDOWN:
+		keyName = "Select + R";
+		break;
+
+		case SDLK_HOME:
+		keyName = "Select + Start";
+		break;
+
+		default:
+			keyName = "";
+	}
+	return keyName;
 }
 
 }

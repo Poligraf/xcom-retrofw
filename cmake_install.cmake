@@ -1,4 +1,4 @@
-# Install script for directory: /home/mamaitatolaptop/Downloads/OpenXcom-od-47a7d7c6e2f015f60d76f1451ecef0194a36cfcd
+# Install script for directory: /run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/xcom-retrofw
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/opt/rs97tools/usr/bin/mipsel-RetroFW-linux-uclibc-objdump")
+  set(CMAKE_OBJDUMP "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/buildroot/output/host/usr/bin/mipsel-RetroFW-linux-uclibc-objdump")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -51,7 +51,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/applications" TYPE FILE FILES "/home/mamaitatolaptop/Downloads/OpenXcom-od-47a7d7c6e2f015f60d76f1451ecef0194a36cfcd/res/linux/openxcom.desktop")
+file(INSTALL DESTINATION "/usr/local/share/applications" TYPE FILE FILES "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/xcom-retrofw/res/linux/openxcom.desktop")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -63,7 +63,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/icons/hicolor/48x48/apps" TYPE FILE RENAME "openxcom.png" FILES "/home/mamaitatolaptop/Downloads/OpenXcom-od-47a7d7c6e2f015f60d76f1451ecef0194a36cfcd/res/linux/icons/openxcom_48x48.png")
+file(INSTALL DESTINATION "/usr/local/share/icons/hicolor/48x48/apps" TYPE FILE RENAME "openxcom.png" FILES "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/xcom-retrofw/res/linux/icons/openxcom_48x48.png")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -75,7 +75,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/icons/hicolor/128x128/apps" TYPE FILE RENAME "openxcom.png" FILES "/home/mamaitatolaptop/Downloads/OpenXcom-od-47a7d7c6e2f015f60d76f1451ecef0194a36cfcd/res/linux/icons/openxcom_128x128.png")
+file(INSTALL DESTINATION "/usr/local/share/icons/hicolor/128x128/apps" TYPE FILE RENAME "openxcom.png" FILES "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/xcom-retrofw/res/linux/icons/openxcom_128x128.png")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -87,13 +87,13 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/icons/hicolor/scalable/apps" TYPE FILE FILES "/home/mamaitatolaptop/Downloads/OpenXcom-od-47a7d7c6e2f015f60d76f1451ecef0194a36cfcd/res/linux/icons/openxcom.svg")
+file(INSTALL DESTINATION "/usr/local/share/icons/hicolor/scalable/apps" TYPE FILE FILES "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/xcom-retrofw/res/linux/icons/openxcom.svg")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/mamaitatolaptop/Downloads/OpenXcom-od-47a7d7c6e2f015f60d76f1451ecef0194a36cfcd/docs/cmake_install.cmake")
-  include("/home/mamaitatolaptop/Downloads/OpenXcom-od-47a7d7c6e2f015f60d76f1451ecef0194a36cfcd/src/cmake_install.cmake")
+  include("/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/xcom-retrofw/docs/cmake_install.cmake")
+  include("/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/xcom-retrofw/src/cmake_install.cmake")
 
 endif()
 
@@ -105,5 +105,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/mamaitatolaptop/Downloads/OpenXcom-od-47a7d7c6e2f015f60d76f1451ecef0194a36cfcd/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/xcom-retrofw/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -96,8 +96,8 @@ void create()
 	_info.push_back(OptionInfo("dragScrollTimeTolerance", &dragScrollTimeTolerance, 300)); // miliSecond
 	_info.push_back(OptionInfo("dragScrollPixelTolerance", &dragScrollPixelTolerance, 10)); // count of pixels
 	_info.push_back(OptionInfo("battleFireSpeed", &battleFireSpeed, 100));
-	_info.push_back(OptionInfo("battleXcomSpeed", &battleXcomSpeed, 80));
-	_info.push_back(OptionInfo("battleAlienSpeed", &battleAlienSpeed, 80));
+	_info.push_back(OptionInfo("battleXcomSpeed", &battleXcomSpeed, 50));
+	_info.push_back(OptionInfo("battleAlienSpeed", &battleAlienSpeed, 50));
 	_info.push_back(OptionInfo("battleNewPreviewPath", (int*)&battleNewPreviewPath, PATH_FULL)); // requires double-click to confirm moves
 	_info.push_back(OptionInfo("fpsCounter", &fpsCounter, false));
 	_info.push_back(OptionInfo("globeDetail", &globeDetail, false));
@@ -200,8 +200,8 @@ void create()
 	_info.push_back(OptionInfo("keyCancel", &keyCancel, SDLK_ESCAPE, "STR_CANCEL", "STR_GENERAL"));
 	_info.push_back(OptionInfo("keyScreenshot", &keyScreenshot, SDLK_F12, "STR_SCREENSHOT", "STR_GENERAL"));
 	_info.push_back(OptionInfo("keyFps", &keyFps, SDLK_F7, "STR_FPS_COUNTER", "STR_GENERAL"));
-	_info.push_back(OptionInfo("keyQuickSave", &keyQuickSave, SDLK_F5, "STR_QUICK_SAVE", "STR_GENERAL"));
-	_info.push_back(OptionInfo("keyQuickLoad", &keyQuickLoad, SDLK_F9, "STR_QUICK_LOAD", "STR_GENERAL"));
+	_info.push_back(OptionInfo("keyQuickSave", &keyQuickSave, SDLK_PAGEUP, "STR_QUICK_SAVE", "STR_GENERAL"));
+	_info.push_back(OptionInfo("keyQuickLoad", &keyQuickLoad, SDLK_PAGEDOWN, "STR_QUICK_LOAD", "STR_GENERAL"));
 	_info.push_back(OptionInfo("keyGeoLeft", &keyGeoLeft, SDLK_LSHIFT, "STR_ROTATE_LEFT", "STR_GEOSCAPE"));
 	_info.push_back(OptionInfo("keyGeoRight", &keyGeoRight, SDLK_LCTRL, "STR_ROTATE_RIGHT", "STR_GEOSCAPE"));
 	_info.push_back(OptionInfo("keyGeoUp", &keyGeoUp, SDLK_SPACE, "STR_ROTATE_UP", "STR_GEOSCAPE"));

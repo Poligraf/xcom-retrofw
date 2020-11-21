@@ -43,6 +43,7 @@ Thumbs.db
 *.bak
 *.cache
 *.ilk
+*.a
 *.log
 *.tlog
 *.zip

@@ -300,7 +300,7 @@ void TextEdit::draw()
 {
 	Surface::draw();
 	UString newValue = _value;
-	if (Options::keyboardMode == KEYBOARD_OFF && _isFocused)
+	if (Options::keyboardMode == KEYBOARD_OFF)
 	{
 		if (_blink)
 		{
