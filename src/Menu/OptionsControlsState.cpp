@@ -146,7 +146,7 @@ void OptionsControlsState::addControls(const std::vector<OptionInfo> &keys)
 		std::string name = tr(i->description());
 		SDLKey *key = i->asKey();
 		std::string keyName = ucWords(SDL_GetKeyName(*key));
-		if (*key == SDLK_UNKNOWN)
+		if (*key == SDLK_UNKNOWN || *key == SDLK_WORLD_95)
 			keyName = "";
 		_lstControls->addRow(2, name.c_str(), keyName.c_str());
 	}
@@ -216,7 +216,7 @@ void OptionsControlsState::lstControlsClick(Action *action)
 	else if (action->getDetails()->button.button == SDL_BUTTON_RIGHT)
 	{
 		_lstControls->setCellText(_selected, 1, "");
-		*_selKey->asKey() = SDLK_UNKNOWN;
+		*_selKey->asKey() = SDLK_WORLD_95;
 		_selected = -1;
 		_selKey = 0;
 	}

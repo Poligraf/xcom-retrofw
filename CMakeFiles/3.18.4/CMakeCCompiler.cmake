@@ -15,8 +15,8 @@ set(CMAKE_C_SIMULATE_ID "")
 set(CMAKE_C_COMPILER_FRONTEND_VARIANT "")
 set(CMAKE_C_SIMULATE_VERSION "")
 
-set(CMAKE_C_COMPILER_SYSROOT "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/buildroot/output/host/mipsel-RetroFW-linux-uclibc/sysroot/usr")
-set(CMAKE_COMPILER_SYSROOT "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/buildroot/output/host/mipsel-RetroFW-linux-uclibc/sysroot/usr")
+set(CMAKE_C_COMPILER_SYSROOT "/home/mamaitatolaptop/buildroot/output/host/mipsel-RetroFW-linux-uclibc/sysroot/usr")
+set(CMAKE_COMPILER_SYSROOT "/home/mamaitatolaptop/buildroot/output/host/mipsel-RetroFW-linux-uclibc/sysroot/usr")
 
 
 set(CMAKE_AR "/opt/rs97tools/usr/bin/mipsel-RetroFW-linux-uclibc-ar")
@@ -72,7 +72,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/buildroot/output/host/lib/gcc/mipsel-RetroFW-linux-uclibc/7.3.0/include;/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/buildroot/output/host/lib/gcc/mipsel-RetroFW-linux-uclibc/7.3.0/include-fixed;/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/buildroot/output/host/mipsel-RetroFW-linux-uclibc/include;/opt/rs97tools/usr/mipsel-RetroFW-linux-uclibc/sysroot/usr/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/home/mamaitatolaptop/buildroot/output/host/lib/gcc/mipsel-RetroFW-linux-uclibc/7.3.0/include;/home/mamaitatolaptop/buildroot/output/host/lib/gcc/mipsel-RetroFW-linux-uclibc/7.3.0/include-fixed;/home/mamaitatolaptop/buildroot/output/host/mipsel-RetroFW-linux-uclibc/include;/opt/rs97tools/usr/mipsel-RetroFW-linux-uclibc/sysroot/usr/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "gcc;gcc_s;c;gcc;gcc_s")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/buildroot/output/host/lib/gcc/mipsel-RetroFW-linux-uclibc/7.3.0;/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/buildroot/output/host/mipsel-RetroFW-linux-uclibc/lib;/opt/rs97tools/usr/mipsel-RetroFW-linux-uclibc/sysroot/lib;/opt/rs97tools/usr/mipsel-RetroFW-linux-uclibc/sysroot/usr/lib")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/home/mamaitatolaptop/buildroot/output/host/lib/gcc/mipsel-RetroFW-linux-uclibc/7.3.0;/home/mamaitatolaptop/buildroot/output/host/mipsel-RetroFW-linux-uclibc/lib;/opt/rs97tools/usr/mipsel-RetroFW-linux-uclibc/sysroot/lib;/opt/rs97tools/usr/mipsel-RetroFW-linux-uclibc/sysroot/usr/lib")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

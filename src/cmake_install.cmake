@@ -1,4 +1,4 @@
-# Install script for directory: /run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/OpenXcom-od/src
+# Install script for directory: /home/mamaitatolaptop/Downloads/OpenXcom-od-47a7d7c6e2f015f60d76f1451ecef0194a36cfcd/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,13 +49,9 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/openxcom"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/OpenXcom-od/bin/openxcom")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/mamaitatolaptop/Downloads/OpenXcom-od-47a7d7c6e2f015f60d76f1451ecef0194a36cfcd/bin/openxcom")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/openxcom" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/openxcom")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/openxcom"
-         OLD_RPATH "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/yaml-cpp:"
-         NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/opt/rs97tools/usr/bin/mipsel-RetroFW-linux-uclibc-strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/openxcom")
     endif()
@@ -71,7 +67,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/openxcom" TYPE DIRECTORY FILES "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/OpenXcom-od/bin/TFTD")
+file(INSTALL DESTINATION "/usr/local/share/openxcom" TYPE DIRECTORY FILES "/home/mamaitatolaptop/Downloads/OpenXcom-od-47a7d7c6e2f015f60d76f1451ecef0194a36cfcd/bin/TFTD")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -83,7 +79,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/openxcom" TYPE DIRECTORY FILES "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/OpenXcom-od/bin/UFO")
+file(INSTALL DESTINATION "/usr/local/share/openxcom" TYPE DIRECTORY FILES "/home/mamaitatolaptop/Downloads/OpenXcom-od-47a7d7c6e2f015f60d76f1451ecef0194a36cfcd/bin/UFO")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -95,7 +91,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/openxcom" TYPE DIRECTORY FILES "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/OpenXcom-od/bin/common")
+file(INSTALL DESTINATION "/usr/local/share/openxcom" TYPE DIRECTORY FILES "/home/mamaitatolaptop/Downloads/OpenXcom-od-47a7d7c6e2f015f60d76f1451ecef0194a36cfcd/bin/common")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -107,6 +103,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/openxcom" TYPE DIRECTORY FILES "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/OpenXcom-od/bin/standard")
+file(INSTALL DESTINATION "/usr/local/share/openxcom" TYPE DIRECTORY FILES "/home/mamaitatolaptop/Downloads/OpenXcom-od-47a7d7c6e2f015f60d76f1451ecef0194a36cfcd/bin/standard")
 endif()
 

@@ -40,31 +40,20 @@
 #include "FileMap.h"
 #include "Unicode.h"
 #include "../Menu/TestState.h"
-#define DEADZONE 2500
-
+uint8_t *keystate = SDL_GetKeyState(NULL);
 
 
 #define	BUTTON_UP		SDLK_UP			// Up
 #define	BUTTON_DOWN		SDLK_DOWN		// Down
 #define	BUTTON_LEFT		SDLK_LEFT		// Left
 #define	BUTTON_RIGHT	SDLK_RIGHT		// Right
-#define	BUTTON_START	SDLK_RETURN		// Start
-#define	BUTTON_SELECT	SDLK_ESCAPE		// Select
-#define	BUTTON_A		SDLK_LCTRL		// Right button (A)
-#define	BUTTON_B		SDLK_LALT		// Bottom button (B)
-#define	BUTTON_X		SDLK_SPACE		// Top button (GCW Y, A320 X)
-#define	BUTTON_Y		SDLK_LSHIFT		// Left button (GCW X, A320 Y)
-#define	BUTTON_L		SDLK_TAB		// L
-#define	BUTTON_R		SDLK_BACKSPACE	// R
-#define	BUTTON_L2		SDLK_PAGEUP		// L2
-#define	BUTTON_R2		SDLK_PAGEDOWN	// R2
-#define	BUTTON_L3		SDLK_KP_DIVIDE	// L3
-#define	BUTTON_R3		SDLK_KP_PERIOD	// R3
-#define	BUTTON_MENU		SDLK_END		// POWER
 
 
 int av_mouse_cur_x;
 int av_mouse_cur_y;
+
+
+
 
 namespace OpenXcom
 {
@@ -82,35 +71,11 @@ Game::Game(const std::string &title) : _screen(0), _cursor(0), _lang(0), _save(0
 	Options::mute = false;
 
 	// Initialize SDL
-	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK) < 0)
+	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
 		throw Exception(SDL_GetError());
 	}
-
 	Log(LOG_INFO) << "SDL initialized successfully.";
-
-	// Experimental joystick handling
-	Log(LOG_INFO) << "Joysticks " << SDL_NumJoysticks();
-
-	if (SDL_NumJoysticks() > 0)
-	{
-		int i = 0;
-		while (!_joy && i < SDL_NumJoysticks())
-		{
-			_joy = SDL_JoystickOpen(i);
-		}
-
-		if (!_joy)
-		{
-			Log(LOG_INFO) << "Could not open any joysticks.";
-		}
-		else
-		{
-			Log(LOG_INFO) << "Joystick " << i << " initialized";
-			Log(LOG_INFO) << "Axes: " << SDL_JoystickNumAxes(_joy) << ", Buttons: " << SDL_JoystickNumButtons(_joy);
-		}
-	}
-
 
 	// Initialize SDL_mixer
 	if (SDL_InitSubSystem(SDL_INIT_AUDIO) < 0)
@@ -126,7 +91,7 @@ Game::Game(const std::string &title) : _screen(0), _cursor(0), _lang(0), _save(0
 
 	// trap the mouse inside the window
 	SDL_WM_GrabInput(Options::captureMouse);
-
+	
 	// Set the window icon
 	CrossPlatform::setWindowIcon(IDI_ICON1, FileMap::getFilePath("openxcom.png"));
 
@@ -142,7 +107,7 @@ Game::Game(const std::string &title) : _screen(0), _cursor(0), _lang(0), _save(0
 
 	// Create cursor
 	_cursor = new Cursor(9, 13);
-
+	
 	// Create invisible hardware cursor to workaround bug with absolute positioning pointing devices
 	SDL_ShowCursor(SDL_ENABLE);
 	Uint8 cursor = 0;
@@ -171,7 +136,6 @@ Game::~Game()
 	}
 
 	SDL_FreeCursor(SDL_GetCursor());
-	SDL_JoystickClose(_joy);
 
 	delete _cursor;
 	delete _lang;
@@ -337,11 +301,11 @@ void Game::run()
 				break;
 			}
 		}
+		
 
-		//handle joystick stuff
 		{
 			//poll mouse state
-			uint8_t *keystate = SDL_GetKeyState(NULL);
+
 			if ((keystate[BUTTON_DOWN] || keystate[BUTTON_UP] ||
 			keystate[BUTTON_LEFT] || keystate[BUTTON_RIGHT])) {
 				SDL_GetMouseState(&av_mouse_cur_x, &av_mouse_cur_y);
@@ -356,6 +320,10 @@ void Game::run()
 				SDL_WarpMouse(av_mouse_cur_x, av_mouse_cur_y);
 			}
 		}
+
+
+
+
 		// Process rendering
 		if (runningState != PAUSED)
 		{
@@ -400,7 +368,7 @@ void Game::run()
 		// Save on CPU
 		switch (runningState)
 		{
-			case RUNNING:
+			case RUNNING: 
 				SDL_Delay(1); //Save CPU from going 100%
 				break;
 			case SLOWED: case PAUSED:
@@ -467,11 +435,6 @@ void Game::setVolume(int sound, int music, int ui)
 double Game::volumeExponent(int volume)
 {
 	return (exp(log(Game::VOLUME_GRADIENT + 1.0) * volume / (double)SDL_MIX_MAXVOLUME) -1.0 ) / Game::VOLUME_GRADIENT;
-}
-
-SDL_Joystick *Game::getJoystick() const
-{
-	return _joy;
 }
 
 /**
@@ -747,3 +710,4 @@ void Game::initAudio()
 }
 
 }
+

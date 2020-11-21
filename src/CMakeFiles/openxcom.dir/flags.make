@@ -4,7 +4,7 @@
 # compile CXX with /opt/rs97tools/usr/bin/mipsel-RetroFW-linux-uclibc-g++
 CXX_DEFINES = -DDATADIR=\"/usr/local/share/openxcom/\" -DGIT_BUILD=1 -D__NO_OPENGL
 
-CXX_INCLUDES = -I/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/OpenXcom-od -isystem /opt/rs97tools/usr/mipsel-RetroFW-linux-uclibc/sysroot/usr/include/SDL -isystem /run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/yaml-cpp/include -isystem /run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/yaml-cpp/include/..
+CXX_INCLUDES = -I/home/mamaitatolaptop/Downloads/OpenXcom-od-47a7d7c6e2f015f60d76f1451ecef0194a36cfcd -isystem /opt/rs97tools/usr/mipsel-RetroFW-linux-uclibc/sysroot/usr/include/SDL -isystem /home/mamaitatolaptop/Downloads/yaml-cpp-yaml-cpp-0.5.3/include -isystem /home/mamaitatolaptop/Downloads/yaml-cpp-yaml-cpp-0.5.3/include/..
 
 CXX_FLAGS = -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -O3 -DNDEBUG -DDINGOO -I/opt/rs97tools/mipsel-RetroFW-linux-uclibc/sysroot/usr/include/   -Wno-unused-function -Wno-missing-field-initializers -std=gnu++11
 

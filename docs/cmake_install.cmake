@@ -1,4 +1,4 @@
-# Install script for directory: /run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/OpenXcom-od/docs
+# Install script for directory: /home/mamaitatolaptop/Downloads/OpenXcom-od-47a7d7c6e2f015f60d76f1451ecef0194a36cfcd/docs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

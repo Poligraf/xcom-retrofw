@@ -1,6 +1,6 @@
-set(CMAKE_HOST_SYSTEM "Linux-5.4.74-1-MANJARO")
+set(CMAKE_HOST_SYSTEM "Linux-4.19.154-1-MANJARO")
 set(CMAKE_HOST_SYSTEM_NAME "Linux")
-set(CMAKE_HOST_SYSTEM_VERSION "5.4.74-1-MANJARO")
+set(CMAKE_HOST_SYSTEM_VERSION "4.19.154-1-MANJARO")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
 include("/opt/rs97tools/usr/share/buildroot/toolchainfile.cmake")
